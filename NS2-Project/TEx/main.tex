@@ -1,0 +1,70 @@
+
+
+\documentclass[14pt]{scrartcl} % Font size
+
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{	
+	\normalfont\normalsize
+	\textsc{Department of Computer Science and Engineering, BUET}\\ % Your university, school and/or department name(s)
+	\vspace{25pt} % Whitespace
+	\rule{\linewidth}{0.5pt}\\ % Thin top horizontal rule
+	\vspace{20pt} % Whitespace
+	{\huge NS2 Project Report}\\ % The assignment title
+	\vspace{12pt} % Whitespace
+	\rule{\linewidth}{2pt}\\ % Thick bottom horizontal rule
+	\vspace{12pt} % Whitespace
+}
+
+\author{\LARGE Ruhul Azgor \\ 1805091} % Your name
+
+\date{\normalsize\today} % Today's date (\today) or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	FIGURE EXAMPLE
+%----------------------------------------------------------------------------------------
+
+\section*{}
+
+\begin{figure}[h] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.5\columnwidth]{Figures/BUET_LOGO.svg.png} % Example image
+	 
+\end{figure}
+
+%------------------------------------------------
+\pagebreak
+%\paragraph{My student ID is %1805091.$91\%8=3$. So, I have simulated %Wireless 802.15.4 (static) ( section-1) and %Wireless 802.11 (mobile) (section-2) %network.In the section-3, I have simulated %modified AODV routing protocol in Wireless %802.11 (mobile) network. }
+
+%\include{_15_4.tex}
+
+%\include{_11_2.tex}
+
+\include{modified.tex}
+% \section{Discussion}
+% \subsection{Varying Number of Node}
+% This data shows the results of a simulation of a wireless network with a fixed area of 500 and 20 flows, but varying number of nodes, from 20 to 100.
+
+% As the number of nodes in the network increases, the drop ratio also increases, indicating that the network becomes more congested and there is a higher likelihood of packets being dropped(See \ref{fig:varyingNode}). The average delay also increases with the number of nodes, reflecting the increased competition for resources in the network. On the other hand, the throughput and delivery ratio both decrease, which suggests that the network becomes less efficient as the number of nodes increases.
+% \subsection{Varying Number of flow}
+% This data provides information about the performance of a wireless communication network in a 500 square area with 40 nodes. The number of flows (number of data streams transmitted in parallel) varies from 10 to 50.
+
+% The results show that the number of dropped packets increases as the number of flows increases. When the number of flows is 10, the drop ratio is 47.99\% and the delivery ratio is 51.34\%. As the number of flows increases, the drop ratio increases and the delivery ratio decreases. When the number of flows is 50, the drop ratio is 96.27\% and the delivery ratio is only 2.79\%(\ref{fig:varyingFlow}).
+
+% Additionally, the average delay and throughput of the network decrease as the number of flows increases. When the number of flows is 10, the average delay is 1.534 seconds and the throughput is 459553 bits/sec. When the number of flows is 50, the average delay is 7.608 seconds and the throughput is 130277 bits/sec.
+% \subsection{Varying Area}
+% This data set represents the results of a simulation experiment that studies the impact of the area on network performance. The network has 40 nodes and 20 flows, and the area of the network is varied from 250 to 1250. The key performance metrics considered are throughput, average delay, delivery ratio, and drop ratio.
+
+% The results show that as the area of the network increases, the average delay and drop ratio increase, while the throughput and delivery ratio decrease(See \ref{fig:varyingArea}). This can be attributed to the fact that with an increase in the area of the network, the number of hops for a packet to reach its destination increases, which results in increased delay and drop ratio. Furthermore, with an increase in the area, the number of nodes in the network also increases, which results in increased competition for network resources and decreased throughput and delivery ratio.
+
+% The data also suggests that the network performance is not uniform for all areas and that there are trade-offs between different performance metrics. For example, in the case of an area of 1250, the network has a higher throughput and delivery ratio compared to other areas, but the average delay is also high. Hence, it is important to consider the specific requirements of a network and make informed decisions while choosing the appropriate network area.
+
+\end{document}

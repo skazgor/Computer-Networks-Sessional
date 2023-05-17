@@ -9,6 +9,29 @@ public class Request {
     private String contentType;
     private byte[] body;
     private int contentLength;
+    private boolean status;
+    private String fileName;
+    public boolean image = false;
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        if(status.equals("OK")){
+            this.status=true;
+        }
+        else{
+            this.status=false;
+        }
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String filename) {
+        this.fileName = filename;
+    }
     public RequestType getRequestType() {
         return requestType;
     }
@@ -32,6 +55,9 @@ public class Request {
     public void setMethod(String requestType) {
         if(requestType.equals("GET")){
             this.requestType=RequestType.GET;
+        }
+        else if(requestType.equals("UPLOAD")){
+            this.requestType=RequestType.UPLOAD;
         }
         else if(requestType.equals("POST")){
             this.requestType=RequestType.POST;
@@ -102,11 +128,17 @@ public class Request {
 
     @Override
     public String toString() {
-        return "Request{" +
+        String s= "Request{\n" +
                 "requestType=" + requestType +
-                ", url='" + url + '\'' +
-                ", version='" + version + '\'' +
-                ", contentLength=" + contentLength +
-                '}';
+                "\nurl=" + url   +
+                ",\nversion=" + version + '\n';
+        if(image){
+            s+="Sec-Fetch-Dest: image\n";
+        }
+        else {
+            s+="Sec-Fetch-Dest: document\n";
+        }
+        s+= '}';
+        return s;
     }
 }

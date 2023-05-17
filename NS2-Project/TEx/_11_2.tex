@@ -1,0 +1,382 @@
+\section{Wireless IEEE 802.11.2 Mobile Networks}
+\subsection{Description of the simulation}
+The simulation is based on the IEEE 802.11.2(mobile) standard. Routing is based on the aodv protocol. The simulation is based on the ns-2 simulator. The simulation is based on the following parameters:
+\begin{itemize}
+    \item Channel: Wireless channel
+    \item Propagation: Two-ray ground
+    \item Antenna: Omnidirectional
+    \item Link: IEEE 802.11.2
+    \item Queue: Drop-tail
+    \item Routing: AODV
+    \item Mobility: Random waypoint
+    \item Position: Grid
+    \item Area: 500 x 500 meters
+    \item Flow: Random source to random destination
+    \item Packet size: 64 bytes
+    \item Number of nodes: Variable
+    \item Number of flows: Variable
+    \item Packet rate: Variable
+    \item Speed: Variable
+    \item Simulation time: 60 seconds
+\end{itemize}
+
+\subsection{Results}
+\subsubsection{Varying Number of Nodes}
+Baseline parameters are as follows:
+\begin{itemize}
+    \item Number of flows: 20
+    \item Packet rate: 100 packets per second
+    \item Speed: 5 meters per second
+\end{itemize}
+The number of nodes is varied from 20 to 100 in steps of 20.
+See Figure \ref{node_throughput_mobile} ,\ref{node_delay_mobile} , \ref{node_delivery_mobile} , \ref{node_drop_mobile}, \ref{node_energy_mobile} , \ref{node_energy_mobile_per_byte} and \ref{node_per_node_throughput_mobile} for the result.
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofNodevsThroughput.png}
+     \caption{Number of Nodes Vs Throughput}
+    \label{node_throughput_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofNodevsAverageDelay.png}
+    \caption{Number of Nodes Vs Average Delay}
+     \label{node_delay_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include third image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofNodevsDeliveryRatio.png}
+     \caption{Number of Nodes Vs Delivary Ratio}
+     \label{node_delivery_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include fourth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofNodevsDropRatio.png}
+     \caption{Number of Nodes Vs Drop Ratio}
+     \label{node_drop_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include fifth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofNodevsTotalEnergyConsumption.png}
+     \caption{Number of Nodes Vs Energy Consumption}
+     \label{node_energy_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include sixth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofNodevsEnergyConsumptionperByte.png}
+     \caption{Number of Nodes Vs Energy Per Byte}
+     \label{node_energy_mobile_per_byte}
+\end{subfigure}
+\caption{Varying Number of Nodes}
+\label{fig:varyingNode}
+\end{figure}
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofNode(20)vsperNodeThroughput.png}
+     \caption{Number of Nodes(20) Vs Throughput per Node}
+ \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofNode(40)vsperNodeThroughput.png}
+     \caption{Number of Nodes(40) Vs Throughput per Node}
+    \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include third image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofNode(60)vsperNodeThroughput.png}
+         \caption{Number of Nodes(60) Vs Throughput per Node}
+        \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include fourth image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofNode(80)vsperNodeThroughput.png}
+         \caption{Number of Nodes(80) Vs Throughput per Node}
+        \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include fifth image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofNode(100)vsperNodeThroughput.png}
+         \caption{Number of Nodes(100) Vs Throughput per Node}
+        \end{subfigure}
+\caption{Varying Number of Nodes (Throughput per Node)}
+\label{node_per_node_throughput_mobile}
+\end{figure}
+\subsubsection{Varying Number of Flows}
+Baseline parameters are as follows:
+\begin{itemize}
+    \item Number of nodes: 40
+    \item Packet rate: 100 packets per second
+    \item Speed: 5 meters per second
+\end{itemize}
+The number of flows is varied from 10 to 50 in steps of 10.
+See Figure \ref{flow_throughput_mobile} ,\ref{flow_delay_mobile} , \ref{flow_delivery_mobile} , \ref{flow_drop_mobile}, \ref{flow_energy_mobile} , \ref{flow_energy_mobile_per_byte} and \ref{flow_per_node_throughput_mobile} for the result.
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofFlowvsThroughput.png}
+     \caption{Number of Flows Vs Throughput}
+    \label{flow_throughput_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofFlowvsAverageDelay.png}
+    \caption{Number of Flows Vs Average Delay}
+     \label{flow_delay_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include third image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofFlowvsDeliveryRatio.png}
+     \caption{Number of Flows Vs Delivary Ratio}
+     \label{flow_delivery_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include fourth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofFlowvsDropRatio.png}
+     \caption{Number of Flows Vs Drop Ratio}
+     \label{flow_drop_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include fifth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofFlowvsTotalEnergyConsumption.png}
+     \caption{Number of Flows Vs Energy Consumption}
+     \label{flow_energy_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include sixth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofFlowvsEnergyConsumptionperByte.png}
+     \caption{Number of Flows Vs Energy Per Byte}
+     \label{flow_energy_mobile_per_byte}
+\end{subfigure}
+\caption{Varying Number of Flows}
+\label{fig:varyingFlow}
+\end{figure}
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofFlow(10)vsperNodeThroughput.png}
+     \caption{Number of Flows(10) Vs Throughput per Node}
+ \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofFlow(20)vsperNodeThroughput.png}
+     \caption{Number of Flows(20) Vs Throughput per Node}
+    \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include third image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofFlow(30)vsperNodeThroughput.png}
+         \caption{Number of Flows(30) Vs Throughput per Node}
+        \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include fourth image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofFlow(40)vsperNodeThroughput.png}
+         \caption{Number of Flows(40) Vs Throughput per Node}
+        \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include fifth image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/NumberofFlow(50)vsperNodeThroughput.png}
+         \caption{Number of Flows(50) Vs Throughput per Node}
+        \end{subfigure}
+\caption{Varying Number of Flows (Throughput per Node)}
+\label{flow_per_node_throughput_mobile}
+\end{figure}
+
+\subsubsection{Varying Packet per Second}
+Baseline parameters are as follows:
+\begin{itemize}
+    \item Number of nodes: 40
+    \item Number of flows: 10
+    \item Speed: 5 meters per second
+\end{itemize}
+The packet rate is varied from 100 to 500 packets per second in steps of 100.
+See Figure \ref{packet_rate_throughput_mobile} ,\ref{packet_rate_delay_mobile} , \ref{packet_rate_delivery_mobile} , \ref{packet_rate_drop_mobile}, \ref{packet_rate_energy_mobile} , \ref{packet_rate_energy_mobile_per_byte} and \ref{packet_rate_per_node_throughput_mobile} for the result.
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/PacketpersecondvsThroughput.png}
+     \caption{Packet Rate Vs Throughput}
+    \label{packet_rate_throughput_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/PacketpersecondvsAverageDelay.png}
+    \caption{Packet Rate Vs Average Delay}
+     \label{packet_rate_delay_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include third image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/PacketpersecondvsDeliveryRatio.png}
+     \caption{Packet Rate Vs Delivary Ratio}
+     \label{packet_rate_delivery_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include fourth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/PacketpersecondvsDropRatio.png}
+     \caption{Packet Rate Vs Drop Ratio}
+     \label{packet_rate_drop_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include fifth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/PacketpersecondvsTotalEnergyConsumption.png}
+     \caption{Packet Rate Vs Energy Consumption}
+     \label{packet_rate_energy_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include sixth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/PacketpersecondvsEnergyConsumptionperByte.png}
+     \caption{Packet Rate Vs Energy Per Byte}
+     \label{packet_rate_energy_mobile_per_byte}
+\end{subfigure}
+\caption{Varying Packet Rate}
+\label{fig:varyingPacketRate}
+\end{figure}
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/Packetpersecond(100)vsperNodeThroughput.png}
+     \caption{Packet Rate(100) Vs Throughput per Node}
+ \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/Packetpersecond(200)vsperNodeThroughput.png}
+     \caption{Packet Rate(200) Vs Throughput per Node}
+    \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include third image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/Packetpersecond(300)vsperNodeThroughput.png}
+         \caption{Packet Rate(300) Vs Throughput per Node}
+        \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include fourth image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/Packetpersecond(400)vsperNodeThroughput.png}
+         \caption{Packet Rate(400) Vs Throughput per Node}
+        \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include fifth image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/Packetpersecond(500)vsperNodeThroughput.png}
+         \caption{Packet Rate(500) Vs Throughput per Node}
+        \end{subfigure}
+\caption{Varying Packet Rate (Throughput per Node)}
+\label{packet_rate_per_node_throughput_mobile}
+\end{figure}
+
+\subsubsection{Varying Speed}
+Baseline parameters are as follows:
+\begin{itemize}
+    \item Number of nodes: 40
+    \item Number of flows: 20
+    \item Packet Rate: 100 packets per second
+\end{itemize}
+The speed is varied from 5 to 25 meters per second in steps of 5.
+See Figure \ref{speed_throughput_mobile} ,\ref{speed_delay_mobile} , \ref{speed_delivery_mobile} , \ref{speed_drop_mobile}, \ref{speed_energy_mobile} , \ref{speed_energy_mobile_per_byte} and \ref{speed_per_node_throughput_mobile} for the result.
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/SpeedvsThroughput.png}
+     \caption{Speed Vs Throughput}
+    \label{speed_throughput_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/SpeedvsAverageDelay.png}
+    \caption{Speed Vs Average Delay}
+     \label{speed_delay_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include third image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/SpeedvsDeliveryRatio.png}
+     \caption{Speed Vs Delivary Ratio}
+     \label{speed_delivery_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include fourth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/SpeedvsDropRatio.png}
+     \caption{Speed Vs Drop Ratio}
+     \label{speed_drop_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include fifth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/SpeedvsTotalEnergyConsumption.png}
+     \caption{Speed Vs Energy Consumption}
+     \label{speed_energy_mobile}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include sixth image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/SpeedvsEnergyConsumptionperByte.png}
+     \caption{Speed Vs Energy Per Byte}
+     \label{speed_energy_mobile_per_byte}
+\end{subfigure}
+\caption{Varying Speed}
+\label{fig:varyingSpeed}
+\end{figure}
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/Speed(5)vsperNodeThroughput.png}
+     \caption{Speed(5) Vs Throughput per Node}
+ \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{_11_2_mobile/Speed(10)vsperNodeThroughput.png}
+     \caption{Speed(10) Vs Throughput per Node}
+    \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include third image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/Speed(15)vsperNodeThroughput.png}
+         \caption{Speed(15) Vs Throughput per Node}
+        \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include fourth image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/Speed(20)vsperNodeThroughput.png}
+         \caption{Speed(20) Vs Throughput per Node}
+        \end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    % include fifth image
+    \includegraphics[width=.8\linewidth]{_11_2_mobile/Speed(25)vsperNodeThroughput.png}
+         \caption{Speed(25) Vs Throughput per Node}
+        \end{subfigure}
+\caption{Varying Speed (Throughput per Node)}
+\label{speed_per_node_throughput_mobile}
+\end{figure}
+

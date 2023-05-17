@@ -11,7 +11,15 @@ public class RequestParser {
         this.inputStream=inputStream;
     }
    public void  parse(){
-        parseRequestLine();
+//       try {
+//         while (inputStream.available() > 0) {
+//             int i = inputStream.read();
+//             System.out.print(i+" ");
+//         }
+//       } catch (IOException e) {
+//           e.printStackTrace();
+//       }
+       parseRequestLine();
     }
     private void parseRequestLine(){
         try {
@@ -37,17 +45,51 @@ public class RequestParser {
     }
     private void parseRequestHeaders(){
         try {
+            boolean flag=false;
             int  ch ;
             StringBuilder stringBuilder=new StringBuilder();
             while ((ch= inputStream.read())!= -1){
                 if(ch=='\r'){
-                    if(inputStream.read()=='\n'){
-                        break;
+                    if((ch=inputStream.read())=='\n'){
+                        if(stringBuilder.isEmpty()){
+                            return;
+                        }
+                        flag=true;
+                        if((ch=inputStream.read())=='\r'){
+                            if((ch=inputStream.read())=='\n'){
+                                break;
+                            }
+                        }
                     }
+                }
+                if(flag){
+                    stringBuilder.append('\r');
+                    stringBuilder.append('\n');
+                    flag=false;
                 }
                 stringBuilder.append((char)ch);
             }
+            System.out.println(stringBuilder.toString());
             request.setContentLength(0);
+            String [] requestHeaders=stringBuilder.toString().split("\r\n");
+            for(String requestHeader:requestHeaders){
+                String [] requestHeaderArray=requestHeader.split(": ");
+                if(requestHeaderArray[0].equals("Sec-Fetch-Dest")){
+                    if(requestHeaderArray[1].equals("image")){
+                        request.image=true;
+                    }
+                }
+                if(requestHeaderArray[0].equals("Content-Length")){
+                    request.setContentLength(Integer.parseInt(requestHeaderArray[1]));
+                }
+                if(requestHeaderArray[0].equals("File-Name")){
+                    request.setFileName(requestHeaderArray[1]);
+                }
+                if(requestHeaderArray[0].equals("Status")){
+                    System.out.println(requestHeaderArray[1]);
+                    request.setStatus(requestHeaderArray[1]);
+                }
+            }
             parseRequestBody();
         } catch (IOException e) {
             e.printStackTrace();
